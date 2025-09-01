@@ -6,7 +6,7 @@ Este documento recopila los recursos encontrados durante la investigación para 
 ## Como correr una imagen minima en virtualbox
 
 Anadir en local.conf la variable:
-	**IMAGE_FSTYPES += "wic.vmdk"**
+	**IMAGE_FSTYPES += "wic.vid"**
 
 ### Resumen imagenes compatibles virtualbox
 
@@ -21,4 +21,18 @@ Anadir en local.conf la variable:
 ### Path imagenes construidas
  **build/tmp/deploy/images/**
 
+### Configure VirtualBox
+Como configurar la maquina virtual:
 
+**Virtual machine name and operating system**
+
+- Agregar VM Name
+- Seleccionar OS->Linux
+  
+**Specify virtual hardware**
+- Seleccionar OS Version->Other Linux(64-bit)
+- Seleccionar Base Memory->1024 MB
+  
+**Specify virtual hard disk**
+- Seleccionar Hard Disk File Type and Format->VDI
+-Seleccionar Use an Existing Virtual Hard Disk File->Path imagenes contruidas
