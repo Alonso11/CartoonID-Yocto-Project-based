@@ -1,0 +1,12 @@
+# Yocto Project gitignore
+poky-x86/
+build/
+downloads/
+sstate-cache/
+tmp/
+cache/
+*.pyc
+*.log
+*.patch
+*.orig
+*.rej
