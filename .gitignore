@@ -1,0 +1,48 @@
+# Ignorar todo el directorio runs (contiene resultados de entrenamiento)
+runs/
+
+# Pero mantener los archivos .pt (modelos entrenados)
+!**/*.pt
+
+# Ignorar archivos específicos de entrenamiento YOLO
+# Solo ignorar args.yaml y otros yamls dentro del directorio runs
+runs/**/*.yaml
+runs/**/*.yml
+*_curve.png
+confusion_matrix*.png
+labels.jpg
+results.csv
+results.png
+*batch*.jpg
+*_labels.jpg
+*_pred.jpg
+
+# Ignorar scripts de entrenamiento específicos de YOLO (ajustar según necesidad)
+train_*_debug.py
+
+# Ignorar archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ignorar archivos de entorno virtual
+venv/
+env/
+ENV/
+
+# Ignorar archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar logs
+*.log
+
+# Ignorar archivos de configuración local
+config.local.*
