@@ -8,10 +8,11 @@ PYTHON_VERSION=$(python -c "import sys; print(f'python{sys.version_info.major}.{
 SITE_PACKAGES="$HOME/micromamba/envs/gstreamer-yolo/lib/$PYTHON_VERSION/site-packages"
 GST_PLUGINS_PATH="$HOME/micromamba/envs/gstreamer-yolo/lib/gstreamer-1.0"
 
-# Set environment variables
-export GST_PLUGIN_PATH="$GST_PLUGINS_PATH:$HOME/CartoonID-Yocto-Project-based/sources/plugins"
+# Set environment variables (use current directory)
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export GST_PLUGIN_PATH="$GST_PLUGINS_PATH:$PROJECT_DIR/sources/plugins"
 export GST_PLUGIN_SYSTEM_PATH="$GST_PLUGINS_PATH"
-export PYTHONPATH="$HOME/CartoonID-Yocto-Project-based/sources/plugins:$SITE_PACKAGES"
+export PYTHONPATH="$PROJECT_DIR/sources/plugins:$SITE_PACKAGES"
 export LD_LIBRARY_PATH="$HOME/micromamba/envs/gstreamer-yolo/lib:$LD_LIBRARY_PATH"
 
 # Intel-specific optimizations
