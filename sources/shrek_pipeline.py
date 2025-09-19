@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 CartoonID Shrek Detection Pipeline
-Pipeline completo de GStreamer + OpenCV para detección de personajes de Shrek
-Autor: Tu nombre
+Pipeline completo de GStreamer 
 """
 
 import os
