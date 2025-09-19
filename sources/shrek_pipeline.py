@@ -97,12 +97,12 @@ class ShrekDetectionPipeline:
             decodebin !
             videoscale !
             videoconvert !
-            video/x-raw,format=RGB,width=640,height=480 !
-            python module=yolo_batch_detector
+            video/x-raw,format=RGB,width=1280,height=720 !
+            yolo_batch_detector
                 model-path="{self.model_path}"
-                confidence=0.3
-                inference-size=640
-                batch-size=4
+                confidence=0.5
+                inference-size=416
+                batch-size=1
                 show-fps={str(self.show_fps).lower()} !
             videoconvert !
         """
