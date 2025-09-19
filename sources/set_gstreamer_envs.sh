@@ -1,0 +1,1 @@
+../set_gstreamer_envs.sh
