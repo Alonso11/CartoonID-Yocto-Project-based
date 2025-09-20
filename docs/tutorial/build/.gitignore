@@ -1,0 +1,6 @@
+#Ignore auxiliar compilation files
+
+*.aux  
+*.log  
+*.out  
+*.toc
