@@ -1,6 +1,5 @@
 # Yocto Project gitignore
-poky-x86/
-build/
+**/poky-x86/
 downloads/
 sstate-cache/
 tmp/
