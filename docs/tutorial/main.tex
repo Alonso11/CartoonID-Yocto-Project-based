@@ -1,0 +1,197 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+% Page layout
+\geometry{a4paper, margin=1in}
+
+% Colors for links and listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{linkcolor}{rgb}{0.1,0.1,0.65}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=blue,
+    citecolor=black,
+}
+
+% Code listing style
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% Title formatting
+\titleformat{\section}
+{\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\titleformat{\subsection}
+{\large\bfseries}{\thesubsection}{1em}{}
+
+% Title and Author
+\title{\Huge \textbf{Application Development Tutorial: \\ [CartoonID]}}
+\author{Author Name \\ \texttt{author@email.com}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This tutorial provides a comprehensive guide to setting up the development environment, installing necessary dependencies, and building the \textbf{[Your App Name Here]} application. By the end of this guide, you will have a fully functional development workspace ready for coding.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subsection{About the Application}
+[Provide a brief overview of the application you are developing. What is its purpose? What problem does it solve? What technology stack (e.g., web, mobile, desktop) does it use?]
+
+\subsection{Who This Tutorial Is For}
+This guide is intended for developers who are familiar with basic programming concepts and are looking to set up their machine for contributing to the \textbf{[Your App Name Here]} project.
+
+\section{Development Machine Setup}
+This section details the specifications and configuration of the host computer required for development.
+
+\subsection{Recommended Host Specifications}
+For an optimal development experience, we recommend the following hardware and operating system:
+
+\begin{itemize}
+    \item \textbf{OS:} Ubuntu 22.04 LTS / Windows 10+ / macOS Monterey 12.3+
+    \item \textbf{CPU:} Quad-core processor (2.5 GHz or faster)
+    \item \textbf{RAM:} 8 GB minimum (16 GB recommended)
+    \item \textbf{Storage:} At least 20 GB of free disk space (for tools, SDKs, and dependencies)
+    \item \textbf{Permissions:} Administrator/Sudo privileges to install software
+\end{itemize}
+
+\subsection{Required Base Software}
+Before installing project-specific toolkits, ensure the following are installed on your system:
+\begin{itemize}
+    \item \textbf{Git} (for version control)
+    \item \textbf{curl} or \textbf{wget} (for downloading files from the command line)
+\end{itemize}
+
+You can verify their installation with:
+\begin{lstlisting}[language=bash]
+  git --version
+  curl --version
+\end{lstlisting}
+
+\section{Toolkits \& Core Development Tools}
+This project relies on the following major development tools and SDKs. Follow the official links for installation instructions specific to your OS.
+
+\subsection{Primary Toolkit: [e.g., Flutter SDK]}
+\begin{description}
+    \item[Version:] 3.13.0 (Stable channel)
+    \item[Purpose:] The main framework used for building the cross-platform user interface.
+    \item[Installation Guide:] \url{https://docs.flutter.dev/get-started/install}
+\end{description}
+
+\subsection{Programming Language: [e.g., Python]}
+\begin{description}
+    \item[Version:] Python 3.10+
+    \item[Purpose:] Used for writing the backend logic and scripts.
+    \item[Installer:] Download from the official Python website or use a version manager like \texttt{pyenv}.
+\end{description}
+
+\subsection{Integrated Development Environment (IDE)}
+We recommend using \textbf{Visual Studio Code} with the following extensions:
+\begin{itemize}
+    \item [Extension Pack Name] (e.g., \textbf{Flutter} extension by Dart Code)
+    \item [Dart] extension (if applicable)
+    \item [Python] extension by Microsoft
+\end{itemize}
+
+Alternatively, you can use \textbf{Android Studio} or \textbf{IntelliJ IDEA} with the appropriate plugins.
+
+\section{Project Dependencies}
+The project's dependencies are managed by [e.g., pub, pip, npm]. They are listed in the configuration files and will be installed automatically.
+
+\subsection{Configuration Files}
+The main dependency files for this project are:
+\begin{itemize}
+    \item \texttt{pubspec.yaml} - (For Flutter/Dart packages)
+    \item \texttt{requirements.txt} - (For Python packages)
+    % Add more as needed, e.g., package.json, cargo.toml
+\end{itemize}
+
+\subsection{Installing Dependencies}
+Clone the project repository and navigate into its directory:
+\begin{lstlisting}[language=bash]
+  git clone https://github.com/your-username/your-repo-name.git
+  cd your-repo-name
+\end{lstlisting}
+
+Install all required dependencies by running the following commands:
+\begin{lstlisting}[language=bash]
+  # Example for a Flutter/Dart project
+  flutter pub get
+
+  # Example for a Python project
+  pip install -r requirements.txt
+\end{lstlisting}
+
+\subsection{Key Dependency Overview}
+Here are some of the most important direct dependencies this project uses:
+\begin{itemize}
+    \item %\texttt{http: ^0.13.5} - For making HTTP requests to our backend API.
+    \item %\texttt{provider: ^6.0.5} - For state management within the app.
+    \item  %\texttt{shared\_preferences: ^2.0.15} - For storing key-value data locally on the device.
+    % Add your own key dependencies here
+\end{itemize}
+
+\section{Verifying Your Setup}
+To ensure everything is installed correctly, run the following commands:
+
+\begin{lstlisting}[language=bash]
+  # Check toolkit versions
+  flutter --version
+  python --version
+  dart --version
+
+  # Run a basic check on the project
+  flutter doctor
+  flutter analyze
+\end{lstlisting}
+
+The output of \texttt{flutter doctor} is particularly important as it verifies that all required toolkits (like the Android SDK or Xcode) are properly installed and configured.
+
+\section{Conclusion}
+Your development environment for \textbf{[Your App Name Here]} is now ready! You should have all the necessary toolkits and dependencies installed. You can now proceed to build and run the application for the first time.
+
+The next steps are usually:
+\begin{enumerate}
+    \item \textbf{Build the project:} \texttt{flutter build}
+    \item \textbf{Run the project:} \texttt{flutter run}
+    \item \textbf{Start coding!}
+\end{enumerate}
+
+For any issues during setup, please refer to the \texttt{README.md} file in the project repository or check the \textbf{Troubleshooting} section (if available).
+
+\end{document}
