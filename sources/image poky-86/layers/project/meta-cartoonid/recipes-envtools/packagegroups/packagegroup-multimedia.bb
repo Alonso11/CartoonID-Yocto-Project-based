@@ -7,12 +7,17 @@ inherit packagegroup
 RDEPENDS:${PN} = " \
     python3 \
     python3-pip \
+    python3-dev \
+    python3-modules \
+    python3-opencv \
+    python3-numpy \
     gstreamer1.0 \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-ugly \
     gstreamer1.0-libav \
+    opencv\
     micromamba \
     bash \
     file \
@@ -25,6 +30,7 @@ RDEPENDS:${PN} = " \
     git \
     wget \
     liberation-fonts \
+    mesa\
 "
 
 # Add architecture-specific packages with their runtime names
@@ -60,6 +66,11 @@ RDEPENDS:${PN}:append:x86-64 = " \
     libxfixes3 \
     libxrandr2 \
     libxrender1 \
+    xserver-xorg-driver-vesa \
+    xserver-xorg-driver-modesetting \
+    xserver-xorg-extension-glx \
+    xserver-xorg-extension-dri \
+    xserver-xorg-extension-extmod \
 "
 
 
